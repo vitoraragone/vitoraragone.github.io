@@ -1,13 +1,23 @@
 const cursor = document.querySelector(".cursor");
 const cursorOutter = document.querySelector(".cursor-outter");
 
+let mouseX = 0,
+  mouseY = 0;
+let ticking = false;
+
 document.addEventListener("mousemove", (e) => {
-  const x = e.pageX;
-  const y = e.pageY;
-  cursor.style.left = x + "px";
-  cursor.style.top = y + "px";
-  cursorOutter.style.left = x + "px";
-  cursorOutter.style.top = y + "px";
+  mouseX = e.pageX;
+  mouseY = e.pageY;
+
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      // como o CSS já centraliza com -50%, aqui passamos a posição crua
+      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+      cursorOutter.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+      ticking = false;
+    });
+    ticking = true;
+  }
 });
 
 const links = document.querySelectorAll("a");
