@@ -1,0 +1,25 @@
+.cursor,
+.cursor-outter {
+  height: 30px;
+  width: 30px;
+  border: 1px solid red;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  transition: all 150ms ease-out;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cursor-outter {
+  transition: all 220ms ease-out;
+}
+
+@media (max-width: 800px) {
+  .cursor,
+  .cursor-outter {
+    display: none;
+  }
+}

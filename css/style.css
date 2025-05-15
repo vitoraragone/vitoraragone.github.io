@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@import url("./reset.css");
+@import url("./cursor.css");
+@import url("./header.css");
+@import url("./footer.css");
+@import url("./glitch.css");
+
+.container {
+  max-width: 2500px;
+  padding: 20px;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.left-text,
+.right-text {
+  font-size: 40px;
+  opacity: 0.1;
+  transition-duration: 300ms;
+}
+
+.left-text:hover,
+.right-text:hover {
+  opacity: 0.8;
+  transition-duration: 300ms;
+}
+
+.center-text {
+  text-align: center;
+  font-size: 80px;
+}
+
+.center-text h1 {
+  font-size: 150px;
+  color: #f9f5f1;
+}
+
+.center-text p {
+  line-height: 1;
+}
+
+.projects ul {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-around;
+  color: #f9f5f1;
+  list-style-type: decimal;
+  padding: 0;
+}
+
+.mobile-id {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .mobile-id {
+    display: block;
+    font-size: 20px;
+    color: red;
+  }
+
+  .main-content {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .center-text {
+    font-size: 50px !important;
+  }
+  .center-text h1 {
+    font-size: 60px !important;
+  }
+
+  .left-text,
+  .right-text {
+    display: none;
+  }
+
+  .projects ul {
+    grid-template-columns: repeat(2, auto);
+    font-size: 13px;
+    justify-content: center;
+    column-gap: 4rem;
+  }
+
+  .location p + p {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 900px) {
+  .center-text {
+    font-size: 50px;
+  }
+  .center-text h1 {
+    font-size: 70px;
+  }
+
+  .left-text,
+  .right-text {
+    font-size: 30px;
+    opacity: 1;
+    transition-duration: 300ms;
+  }
+}
