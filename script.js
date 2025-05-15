@@ -11,7 +11,6 @@ document.addEventListener("mousemove", (e) => {
 
   if (!ticking) {
     requestAnimationFrame(() => {
-      // como o CSS já centraliza com -50%, aqui passamos a posição crua
       cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
       cursorOutter.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
       ticking = false;
