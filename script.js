@@ -1,5 +1,6 @@
 const cursor = document.querySelector(".cursor");
 const cursorOutter = document.querySelector(".cursor-outter");
+const cursorFixed = document.querySelector(".cursor-fixed");
 
 let mouseX = 0,
   mouseY = 0;
@@ -13,6 +14,7 @@ document.addEventListener("mousemove", (e) => {
     requestAnimationFrame(() => {
       cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
       cursorOutter.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+      cursorFixed.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
       ticking = false;
     });
     ticking = true;
@@ -27,6 +29,8 @@ links.forEach((link) => {
     cursor.style.height = "50px";
     cursorOutter.style.width = "50px";
     cursorOutter.style.height = "50px";
+    cursorFixed.style.width = "50px";
+    cursorFixed.style.height = "50px";
   });
 
   link.addEventListener("mouseout", () => {
@@ -34,40 +38,7 @@ links.forEach((link) => {
     cursor.style.height = "30px";
     cursorOutter.style.width = "30px";
     cursorOutter.style.height = "30px";
+    cursorFixed.style.width = "30px";
+    cursorFixed.style.height = "30px";
   });
-});
-
-const firstName = document.querySelector("#name");
-const surename = document.querySelector("#surename");
-
-firstName.addEventListener("mouseover", () => {
-  firstName.classList.add("glitch");
-  cursor.style.width = "100px";
-  cursor.style.height = "100px";
-  cursorOutter.style.width = "100px";
-  cursorOutter.style.height = "100px";
-});
-
-firstName.addEventListener("mouseout", () => {
-  firstName.classList.remove("glitch");
-  cursor.style.width = "30px";
-  cursor.style.height = "30px";
-  cursorOutter.style.width = "30px";
-  cursorOutter.style.height = "30px";
-});
-
-surename.addEventListener("mouseover", () => {
-  surename.classList.add("glitch");
-  cursor.style.width = "100px";
-  cursor.style.height = "100px";
-  cursorOutter.style.width = "100px";
-  cursorOutter.style.height = "100px";
-});
-
-surename.addEventListener("mouseout", () => {
-  surename.classList.remove("glitch");
-  cursor.style.width = "30px";
-  cursor.style.height = "30px";
-  cursorOutter.style.width = "30px";
-  cursorOutter.style.height = "30px";
 });

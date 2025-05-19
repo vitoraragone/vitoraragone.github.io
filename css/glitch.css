@@ -33,6 +33,14 @@
   animation-duration: 6s;
 }
 
+@media (max-width: 600px) {
+  .glitch,
+  .glitch::after,
+  .glitch::before {
+    padding: 0;
+  }
+}
+
 @keyframes glitch-animation {
   0% {
     clip: rect(42px, 9999px, 44px, 0);

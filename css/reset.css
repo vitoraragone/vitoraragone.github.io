@@ -26,7 +26,10 @@
 }
 
 body {
+  /* background: black url("../assets/body-bg.svg") no-repeat center center; */
+  background-size: 100%;
   background-color: black;
+  background-position: center;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: "IBM Plex Mono", monospace;
@@ -36,6 +39,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: none;
+  }
 }
 
 img,
